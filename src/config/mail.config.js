@@ -32,7 +32,7 @@ const getTemplate = (name, token) => {
           <h2>Hola ${name}</h2>
           <p>Para confirmar tu cuenta, ingresa al siguiente enlace</p>
           <a
-              href="http://localhost:4000/api/v1/user/confirm/${token}"
+              href="https://back-wguitar-production.up.railway.app/api/v1/user/confirm/${token}"
               target="_blank"
           >Confirmar Cuenta</a>
       </div>
