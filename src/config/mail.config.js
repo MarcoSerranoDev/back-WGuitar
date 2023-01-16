@@ -39,7 +39,19 @@ const getTemplate = (name, token) => {
     `;
 };
 
+const getTemplateDj = (name, horario) => {
+  return `
+      <div id="email___content">
+        <h2>Hola ${name}</h2>
+        <p>Has reservado tu prueba para el controlador DJ</p>
+        <span>Fecha: 15-marzo-2023</span>
+        <span>Horario: ${horario}</span>
+      </div>
+    `;
+};
+
 module.exports = {
   sendEmail,
   getTemplate,
+  getTemplateDj,
 };

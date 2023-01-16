@@ -1,7 +1,29 @@
 const User = require("../models/user.model");
 const { v4: uuidv4 } = require("uuid");
 const { getToken, getTokenData } = require("../config/jwt.config");
-const { getTemplate, sendEmail } = require("../config/mail.config.js");
+const {
+  getTemplate,
+  sendEmail,
+  getTemplateDj,
+} = require("../config/mail.config.js");
+
+const sendMailDJController = async (req, res) => {
+  try {
+    const { email, name, horario } = req.body;
+    const template = getTemplateDj(name, horario);
+    await sendEmail(email, "Reservacion controlador Dj", template);
+    res.status(200).json({
+      success: true,
+      msg: "Correo enviado",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({
+      success: false,
+      msg: "Can´t send email",
+    });
+  }
+};
 
 const singUp = async (req, res) => {
   try {
@@ -100,4 +122,5 @@ const confirm = async (req, res) => {
 module.exports = {
   singUp,
   confirm,
+  sendMailDJController,
 };
