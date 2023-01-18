@@ -51,17 +51,16 @@ const getTemplate = (name, token) => {
 const getTemplateDj = (name, horario) => {
   return `
       <div id="email___content" style="width: 100%; text-align: center;">
+        <div style="background: #000;">
+          <img style="width: 200px; height: 200px; margin-left: 20px; object-fit: cover;" src="https://i.ibb.co/tcvcL0d/LOGO-HMC.png" alt="">
+        </div>
         <h2 style="font-size: 3rem; color: #f9bf19;">Hola ${name}</h2>
         <p style="font-size: 1.2rem;">Has reservado tu prueba para el controlador DJ</p>
         <div style="line-height: 25px;">
-            <span style="display: block; font-size: 1.2rem;">Fecha: 15-marzo-2023</span>
+            <span style="display: block; font-size: 1.2rem;">Fecha: 26-enero-2023</span>
             <span style="display: block; font-size: 1.2rem;">Horario: ${horario}</span>
         </div>
         <p style="font-size: 1.2rem;">Presentate 10 min antes con correo de reservacion.</p>
-        <div style="background: #000;">
-            <img style="width: 200px; height: 200px; margin-left: 20px; object-fit: cover;"
-                src="https://i.ibb.co/tcvcL0d/LOGO-HMC.png" alt="">
-        </div>
       </div>
   `;
 };
